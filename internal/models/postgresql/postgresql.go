@@ -4,12 +4,15 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"migrationtool/internal/config"
+
+	_ "github.com/lib/pq"
+
+	"migrationtool/internal/config/databaseconfig"
 )
 
 // PostgresSql represents the configuration required to connect to a PostgreSQL database.
 type PostgresSql struct {
-	Config *config.DatabaseConfig // Config holds the database configuration.
+	Config *databaseconfig.DatabaseConfig // Config holds the database configuration.
 	DB     *sql.DB                // DB is the sql.DB object for database connection.
 }
 
@@ -19,7 +22,7 @@ func (ps *PostgresSql) ConnectionString() string {
 }
 
 // New creates a new instance of PostgresSql with the given configuration parameters. In case of error, it log.Fatal, with error value.
-func New(config *config.DatabaseConfig) (*PostgresSql) {
+func New(config *databaseconfig.DatabaseConfig) (*PostgresSql) {
 	db := &PostgresSql{
 		Config: config,
 	}
