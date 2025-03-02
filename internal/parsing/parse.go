@@ -35,7 +35,7 @@ import (
 //
 // The function will terminate with log.Fatal if invalid flag combinations are detected.
 func ParseFlags() (*databaseconfig.DatabaseConfig, *migrationconfig.MigrationConfig) {
-    fs := flag.NewFlagSet("migrationtool", flag.ExitOnError)
+    fs := flag.NewFlagSet("gomig", flag.ExitOnError)
 
     // Database flags
     host := fs.String("host", databaseconfig.DefaultHost, "Host of the database. If not specified, default value would be \"Localhost\"")
