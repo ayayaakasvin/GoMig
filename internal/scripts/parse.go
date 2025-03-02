@@ -7,7 +7,7 @@ import (
 	joiner "path" // used alias, because i already used "path" as variable
 	"strings"
 
-	"migrationtool/internal/config/migrationconfig"
+	"github.com/ayayaakasvin/GoMig/internal/config/migrationconfig"
 )
 
 // ParseMigrationFiles reads the migration files and prepares them

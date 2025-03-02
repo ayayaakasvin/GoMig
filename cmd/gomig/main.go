@@ -4,9 +4,9 @@ import (
 	"log"
 	"os"
 
-	"migrationtool/internal/models/postgresql"
-	"migrationtool/internal/parsing"
-	"migrationtool/internal/scripts"
+	"github.com/ayayaakasvin/GoMig/internal/models/postgresql"
+	"github.com/ayayaakasvin/GoMig/internal/parsing"
+	"github.com/ayayaakasvin/GoMig/internal/scripts"
 )
 
 func main() {

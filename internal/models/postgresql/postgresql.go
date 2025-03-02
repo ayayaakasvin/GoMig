@@ -7,7 +7,7 @@ import (
 
 	_ "github.com/lib/pq"
 
-	"migrationtool/internal/config/databaseconfig"
+	"github.com/ayayaakasvin/GoMig/internal/config/databaseconfig"
 )
 
 // PostgresSql represents the configuration required to connect to a PostgreSQL database.

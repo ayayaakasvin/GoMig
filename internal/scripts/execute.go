@@ -3,7 +3,7 @@ package scripts
 import (
 	"fmt"
 	"log"
-	"migrationtool/internal/models"
+	"github.com/ayayaakasvin/GoMig/internal/models"
 )
 
 // ExecuteScripts executes a series of SQL scripts against the provided database.

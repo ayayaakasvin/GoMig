@@ -1,4 +1,4 @@
-module migrationtool
+module github.com/ayayaakasvin/GoMig
 
 go 1.23.6
 

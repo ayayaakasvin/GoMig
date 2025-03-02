@@ -5,8 +5,8 @@ import (
     "log"
 	"os"
 	
-    "migrationtool/internal/config/databaseconfig"
-    "migrationtool/internal/config/migrationconfig"
+    "github.com/ayayaakasvin/GoMig/internal/config/databaseconfig"
+    "github.com/ayayaakasvin/GoMig/internal/config/migrationconfig"
 )
 
 // ParseFlags processes command-line flags to configure database connection and migration settings.
