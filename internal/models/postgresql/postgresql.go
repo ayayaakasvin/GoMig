@@ -34,7 +34,7 @@ func New(config *databaseconfig.DatabaseConfig) (*PostgresSql) {
 	if err := db.Ping();err != nil {
 		log.Fatal(err)
 	}
-
+	
 	return db
 }
 

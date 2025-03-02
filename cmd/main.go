@@ -3,16 +3,33 @@ package main
 import (
 	"log"
 	"os"
-	
+
 	"migrationtool/internal/models/postgresql"
 	"migrationtool/internal/parsing"
+	"migrationtool/internal/scripts"
 )
 
 func main() {
 	dbconf, migrconf := parsing.ParseFlags()
 	db := postgresql.New(dbconf)
-	log.Print(db, migrconf)
+	defer db.Close()
+	
+	log.Printf("Database configuration: %+v", dbconf)
+    log.Printf("Migration configuration: %+v", migrconf)
 
-	// TODO: parse the migration files and execute them
+
+	sqlScripts, err := scripts.ParseMigrationFiles(migrconf)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Printf("Number of SQL scripts: %d", len(sqlScripts))
+
+	err = scripts.ExecuteScripts(db,sqlScripts)
+	if err != nil {
+		log.Fatalf("Failed to execute scripts: %v", err)
+	}
+
+	log.Println("Migration completed successfully")
 	os.Exit(0)
 }
